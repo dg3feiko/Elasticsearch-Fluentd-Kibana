@@ -1,0 +1,17 @@
+es:
+  build: ./elastic-search
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+kibana:
+  build: ./kibana
+  ports:
+    - "8003:80"
+  links:
+    - es:es
+fluentd:
+  image: dg3feiko/fluentd:v1
+  ports:
+    - "24224:24224"
+    - "8002:9292"
+  command: fluentd-ui start

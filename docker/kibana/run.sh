@@ -7,7 +7,7 @@ cat << EOF > /usr/share/nginx/html/config.js
 define(['settings'],
 function (Settings) {
   return new Settings({
-    elasticsearch: "$ES_SCHEME://$ES_HOST:$ES_PORT",
+    elasticsearch: "http://localhost:9200",
     default_route     : '/dashboard/file/default.json',
     kibana_index: "kibana-int",
     panel_names: [
