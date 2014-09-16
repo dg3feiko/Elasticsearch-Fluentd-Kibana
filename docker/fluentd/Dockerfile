@@ -21,5 +21,6 @@ RUN /usr/lib/fluent/ruby/bin/fluent-gem install -V fluentd-ui
 EXPOSE 24224
 EXPOSE 9292
 
-ENTRYPOINT ["/usr/sbin/fluentd-ui"]
-CMD ["start"]
+ADD run.sh /usr/local/bin/run
+
+CMD ["/usr/local/bin/run"]

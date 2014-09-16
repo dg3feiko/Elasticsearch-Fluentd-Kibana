@@ -14,4 +14,7 @@ fluentd:
   ports:
     - "24224:24224"
     - "8002:9292"
-  command: fluentd-ui start
+    - "8888:8888"
+  links:
+    - es:es
+  command: bash /bin/run.sh
